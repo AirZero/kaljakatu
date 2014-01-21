@@ -4,7 +4,12 @@ using UnityEngine;
 using System.Collections;
 
 public class GameOptionControl : MonoBehaviour {
-	
+
+	//Tarkistaa oikean vastauksen, kutsutaan tämän tyyppisissä aliohjelmissa: GameOptions.Level3
+	void CheckAnswer {
+
+	}
+
 	public enum GameOptions{
 		Level1,
 		Level2,
@@ -57,9 +62,10 @@ public class GameOptionControl : MonoBehaviour {
 		*/
 		switch(gameOption){
 		case GameOptions.Level1:
-			audio.Play();
+			//audio.Play();
 			renderer.material.color = Color.red;
 			//Application.LoadLevel("02_level_01");
+			Application.LoadLevel();
 			break;
 		case GameOptions.Level2:
 			Application.LoadLevel("tillintallin");
