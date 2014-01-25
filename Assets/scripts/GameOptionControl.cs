@@ -5,8 +5,47 @@ using System.Collections;
 
 public class GameOptionControl : MonoBehaviour {
 
+	public AudioClip tupakkaa, kaljaa;
+	static int levelNumber = 1;
+
 	//Tarkistaa oikean vastauksen, kutsutaan tämän tyyppisissä aliohjelmissa: GameOptions.Level3
-	void CheckAnswer {
+	void CheckAnswer() {
+
+	}
+
+	public static void increaseLevel(){
+		levelNumber = levelNumber++;
+	}
+
+	
+	void checkAudioSource(){
+		if(audio==null){
+			gameObject.AddComponent<AudioSource>();
+		}
+		
+	}
+
+	void update(){
+	
+	}
+
+	void startLevel(){
+		if(levelNumber == 1){
+			checkAudioSource();
+			audio.clip = tupakkaa;
+			audio.Play();
+		}
+		
+		if(levelNumber == 2){
+			Application.LoadLevel("kirkkopuisto");
+			audio.clip = kaljaa;
+			audio.Play();
+		}
+	}
+
+	// toimii buildin ekassa skenessä
+	void Start() {
+		startLevel();
 
 	}
 
@@ -15,7 +54,8 @@ public class GameOptionControl : MonoBehaviour {
 		Level2,
 		Level3,
 		Level4,
-		Level5
+		Level5,
+		Level6
 	//	Quit
 	}
 	
@@ -40,6 +80,8 @@ public class GameOptionControl : MonoBehaviour {
 	/**
 	 * Event handler for mouse click 
 	 */
+
+
 	void OnMouseUp() {
     	/*
 		//Checks wheter user chose New Game, Options or Quit
@@ -64,22 +106,44 @@ public class GameOptionControl : MonoBehaviour {
 		case GameOptions.Level1:
 			//audio.Play();
 			renderer.material.color = Color.red;
+
 			//Application.LoadLevel("02_level_01");
-			Application.LoadLevel();
+			//Application.LoadLevel();
 			break;
 		case GameOptions.Level2:
 			Application.LoadLevel("tillintallin");
-			//randomAudio;
-
 			break;
 		case GameOptions.Level3:
+			startLevel();
 			Application.LoadLevel("juoppo1");
+
 			break;
 		case GameOptions.Level4:
+			increaseLevel();
 			Application.LoadLevel("kirkkopuisto");
+			startLevel();
 			break;
 		case GameOptions.Level5:
 			Application.LoadLevel("vakkari");
+		
+			break;
+
+			/*
+
+	case GameOptions.Level5:
+			string answer5 = "vakkari";
+			if(answer5 == soundAtm){
+			Application.LoadLevel(answer5);
+			}
+			else Application.LoadLevel("tillintallin");
+			break;
+
+*/
+
+
+		case GameOptions.Level6:
+//			audio.clip = SoundsAndAnswer.olina;
+//			audio.Play();
 			break;
 	/*	case GameOptions.Quit:
 			Application.Quit();
