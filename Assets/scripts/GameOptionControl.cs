@@ -5,7 +5,9 @@ using System.Collections;
 
 public class GameOptionControl : MonoBehaviour {
 
-	public AudioClip tupakkaa, kaljaa;
+	public AudioClip[] drunkPeopleSounds;
+	public string[] Answers;
+
 	static int levelNumber = 1;
 
 	//Tarkistaa oikean vastauksen, kutsutaan tämän tyyppisissä aliohjelmissa: GameOptions.Level3
@@ -32,13 +34,13 @@ public class GameOptionControl : MonoBehaviour {
 	void startLevel(){
 		if(levelNumber == 1){
 			checkAudioSource();
-			audio.clip = tupakkaa;
+			//audio.clip = tupakkaa;
 			audio.Play();
 		}
 		
 		if(levelNumber == 2){
 			Application.LoadLevel("kirkkopuisto");
-			audio.clip = kaljaa;
+			//audio.clip = kaljaa;
 			audio.Play();
 		}
 	}
@@ -150,5 +152,7 @@ public class GameOptionControl : MonoBehaviour {
 			break;
 */			
 		}
+
+
     }//OnMouseUp
 }
