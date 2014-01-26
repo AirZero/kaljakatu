@@ -6,7 +6,8 @@ using System.Collections;
 public class GameOptionControl : MonoBehaviour {
 
 	//private SoundsAndAnswer sa;
-	public SoundsAndAnswer sa;
+	private SoundsAndAnswer sa;
+	public string vastaus = "";
 
 	void update(){
 	}
@@ -16,6 +17,7 @@ public class GameOptionControl : MonoBehaviour {
 	void Start() {
 	//	sa = new SoundsAndAnswer();
 	
+
 		sa = gameObject.AddComponent("SoundsAndAnswer") as SoundsAndAnswer;
 		
 		
@@ -110,11 +112,17 @@ public class GameOptionControl : MonoBehaviour {
 		
 			break;
 
+	/*		public string kentta(){
+				int randomSound = 0;
+				randomSound = sa.soitaAani();
+				vastaus = sa.Answers[randomSound];
+			}*/
+
 	case GameOptions.Level7:
 			int randomSound = 0;
 			randomSound = sa.soitaAani();
 			string choice = "tupakkaa";
-//			Debug.Log();
+			Debug.Log(sa.Answers[randomSound]);
 			if(sa.Answers[randomSound]==choice){
 			Application.LoadLevel("vakkari");
 			}
