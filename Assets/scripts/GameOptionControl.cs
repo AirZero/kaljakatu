@@ -5,49 +5,17 @@ using System.Collections;
 
 public class GameOptionControl : MonoBehaviour {
 
-	public AudioClip[] drunkPeopleSounds;
-	public string[] Answers;
-
-	static int levelNumber = 1;
-
-	//Tarkistaa oikean vastauksen, kutsutaan tämän tyyppisissä aliohjelmissa: GameOptions.Level3
-	void CheckAnswer() {
-
-	}
-
-	public static void increaseLevel(){
-		levelNumber = levelNumber++;
-	}
-
-	
-	void checkAudioSource(){
-		if(audio==null){
-			gameObject.AddComponent<AudioSource>();
-		}
-		
-	}
+	private SoundsAndAnswer sa;
 
 	void update(){
-	
-	}
 
-	void startLevel(){
-		if(levelNumber == 1){
-			checkAudioSource();
-			//audio.clip = tupakkaa;
-			audio.Play();
-		}
-		
-		if(levelNumber == 2){
-			Application.LoadLevel("kirkkopuisto");
-			//audio.clip = kaljaa;
-			audio.Play();
-		}
+
 	}
+	
 
 	// toimii buildin ekassa skenessä
 	void Start() {
-		startLevel();
+		sa = new SoundsAndAnswer();
 
 	}
 
@@ -57,7 +25,8 @@ public class GameOptionControl : MonoBehaviour {
 		Level3,
 		Level4,
 		Level5,
-		Level6
+		Level6,
+		Level7
 	//	Quit
 	}
 	
@@ -82,7 +51,16 @@ public class GameOptionControl : MonoBehaviour {
 	/**
 	 * Event handler for mouse click 
 	 */
+	/*  --------------  int soitaAani(){
+		System.Random rnd = new System.Random();
+		int randomSound = rnd.Next(0, 4);
+		checkAudioSource();
+		audio.clip = drunkPeopleSounds[randomSound];
+		audio.Play();	
+		return randomSound;
+	}
 
+	*/
 
 	void OnMouseUp() {
     	/*
@@ -116,31 +94,39 @@ public class GameOptionControl : MonoBehaviour {
 			Application.LoadLevel("tillintallin");
 			break;
 		case GameOptions.Level3:
-			startLevel();
+	
 			Application.LoadLevel("juoppo1");
 
 			break;
 		case GameOptions.Level4:
-			increaseLevel();
+	
 			Application.LoadLevel("kirkkopuisto");
-			startLevel();
+
 			break;
 		case GameOptions.Level5:
 			Application.LoadLevel("vakkari");
 		
 			break;
 
-			/*
-
-	case GameOptions.Level5:
-			string answer5 = "vakkari";
-			if(answer5 == soundAtm){
-			Application.LoadLevel(answer5);
+	case GameOptions.Level7:
+			int randomSound = 0;
+			randomSound = sa.soitaAani();
+			string choice = "tupakkaa";
+//			Debug.Log();
+			if(sa.Answers[randomSound]==choice){
+			Application.LoadLevel("vakkari");
 			}
-			else Application.LoadLevel("tillintallin");
+			else
+			Application.LoadLevel("tillintallin");
+
+	//		string answer5 = "vakkari";
+//			if(answer5 == soundAtm){
+//			Application.LoadLevel(answer5);
+	//		}
+	//		else Application.LoadLevel("tillintallin");
 			break;
 
-*/
+
 
 
 		case GameOptions.Level6:

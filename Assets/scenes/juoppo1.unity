@@ -184,9 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f60c6a2917a5094fb9d7fb8eeae99e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkPeopleSounds: []
-  Answers: []
-  gameOption: 1
+  gameOption: 0
 --- !u!23 &200705047
 Renderer:
   m_ObjectHideFlags: 0
@@ -312,6 +310,52 @@ Transform:
   m_LocalScale: {x: .831907213, y: .831907213, z: .831907213}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &468592704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: b73f8e7b53463ad48ac17755d70bd6f9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468592706}
+  - 114: {fileID: 468592705}
+  m_Layer: 0
+  m_Name: Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &468592705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468592704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a3105932cf284fb7a06d44d4e7fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drunkPeopleSounds:
+  - {fileID: 8300000, guid: 9b630206a72391441bd779e7c2a1a572, type: 3}
+  - {fileID: 8300000, guid: 1a86e8f0914067b49843016db91709ba, type: 3}
+  - {fileID: 8300000, guid: 888a072c92ca05842b663735adc13b45, type: 3}
+  Answers:
+  - rahaa
+  - tupakkaa
+  - kaljaa
+--- !u!4 &468592706
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: b73f8e7b53463ad48ac17755d70bd6f9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468592704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0284571648, y: -1.08199143, z: 12.6271324}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1112227262
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,9 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f60c6a2917a5094fb9d7fb8eeae99e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkPeopleSounds: []
-  Answers: []
-  gameOption: 1
+  gameOption: 0
 --- !u!23 &1112227264
 Renderer:
   m_ObjectHideFlags: 0
@@ -413,7 +455,6 @@ GameObject:
   - 64: {fileID: 1115395156}
   - 23: {fileID: 1115395155}
   - 114: {fileID: 1115395154}
-  - 82: {fileID: 1115395153}
   m_Layer: 0
   m_Name: juoppo
   m_TagString: Untagged
@@ -421,64 +462,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1115395153
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1115395152}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1115395154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,9 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f60c6a2917a5094fb9d7fb8eeae99e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkPeopleSounds: []
-  Answers: []
-  gameOption: 5
+  gameOption: 0
 --- !u!23 &1115395155
 Renderer:
   m_ObjectHideFlags: 0
@@ -545,72 +526,6 @@ Transform:
   m_LocalScale: {x: .174946874, y: .133724779, z: .285836607}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1 &1530353428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100008, guid: b73f8e7b53463ad48ac17755d70bd6f9, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1530353431}
-  - 114: {fileID: 1530353430}
-  - 114: {fileID: 1530353429}
-  m_Layer: 0
-  m_Name: Sounds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1530353429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: b73f8e7b53463ad48ac17755d70bd6f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1530353428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03facebd994d6a54b89b5880cbada32b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuSound: []
---- !u!114 &1530353430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: b73f8e7b53463ad48ac17755d70bd6f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1530353428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f60c6a2917a5094fb9d7fb8eeae99e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drunkPeopleSounds:
-  - {fileID: 8300000, guid: 1a86e8f0914067b49843016db91709ba, type: 3}
-  - {fileID: 8300000, guid: 0161f88492771244093b7134b9989479, type: 3}
-  - {fileID: 8300000, guid: 9c9de06bdfd34b24f8e7778946d66247, type: 3}
-  - {fileID: 8300000, guid: 9c9de06bdfd34b24f8e7778946d66247, type: 3}
-  - {fileID: 8300000, guid: 9c9de06bdfd34b24f8e7778946d66247, type: 3}
-  Answers:
-  - tupakkaa
-  - 
-  - 
-  - 
-  - 
-  gameOption: 0
---- !u!4 &1530353431
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400008, guid: b73f8e7b53463ad48ac17755d70bd6f9, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1530353428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0284571648, y: -1.08199143, z: 12.6271324}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &1711836036
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,9 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f60c6a2917a5094fb9d7fb8eeae99e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkPeopleSounds: []
-  Answers: []
-  gameOption: 3
+  gameOption: 6
 --- !u!23 &1711836038
 Renderer:
   m_ObjectHideFlags: 0
