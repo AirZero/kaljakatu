@@ -12,9 +12,9 @@ public class SoundsAndAnswer : MonoBehaviour {
 
 	public int soitaAani(){
 		int randomSound = rnd.Next(0, 2);
-	//	checkAudioSource();
-	//	audio.clip = drunkPeopleSounds[randomSound];
-	//	audio.Play();
+		checkAudioSource();
+		audio.clip = drunkPeopleSounds[randomSound];
+		audio.Play();
 		return randomSound;
 	}
 
