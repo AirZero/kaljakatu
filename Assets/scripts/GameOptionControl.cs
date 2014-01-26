@@ -5,20 +5,22 @@ using System.Collections;
 
 public class GameOptionControl : MonoBehaviour {
 
-	private SoundsAndAnswer sa;
+	//private SoundsAndAnswer sa;
+	public SoundsAndAnswer sa;
 
 	void update(){
-
-
 	}
 	
 
 	// toimii buildin ekassa skenessä
 	void Start() {
-		sa = new SoundsAndAnswer();
-
+	//	sa = new SoundsAndAnswer();
+	
+		sa = gameObject.AddComponent("SoundsAndAnswer") as SoundsAndAnswer;
+		
+		
 	}
-
+	
 	public enum GameOptions{
 		Level1,
 		Level2,
