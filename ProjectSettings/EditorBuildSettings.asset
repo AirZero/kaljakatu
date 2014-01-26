@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scenes/juoppo1.unity
-  - enabled: 1
     path: Assets/scenes/tillintallin.unity
+  - enabled: 1
+    path: Assets/scenes/juoppo1.unity
   - enabled: 1
     path: Assets/scenes/kirkkopuisto.unity
   - enabled: 1

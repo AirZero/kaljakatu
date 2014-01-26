@@ -8,6 +8,8 @@ public class GameOptionControl : MonoBehaviour {
 	//private SoundsAndAnswer sa;
 	private SoundsAndAnswer sa;
 	public string vastaus = "";
+	private System.Random rnd = new System.Random();
+
 
 	void update(){
 	}
@@ -18,9 +20,12 @@ public class GameOptionControl : MonoBehaviour {
 	//	sa = new SoundsAndAnswer();
 	
 
-		sa = gameObject.AddComponent("SoundsAndAnswer") as SoundsAndAnswer;
+	//	sa = gameObject.AddComponent("SoundsAndAnswer") as SoundsAndAnswer;
+
+		sa = GameObject.Find("Sounds").GetComponent<SoundsAndAnswer>();
+
 		
-		
+		sa.kentta ();
 	}
 	
 	public enum GameOptions{
@@ -30,7 +35,9 @@ public class GameOptionControl : MonoBehaviour {
 		Level4,
 		Level5,
 		Level6,
-		Level7
+		rahaa,
+		tupakkaa,
+		kaljaa
 	//	Quit
 	}
 	
@@ -66,7 +73,18 @@ public class GameOptionControl : MonoBehaviour {
 
 	*/
 
-	void OnMouseUp() {
+
+
+
+	void OnLevelWasLoaded() {
+
+		
+	}
+
+
+		
+		
+		void OnMouseUp() {
     	/*
 		//Checks wheter user chose New Game, Options or Quit
 		if(isNewGame){
@@ -95,59 +113,90 @@ public class GameOptionControl : MonoBehaviour {
 			//Application.LoadLevel();
 			break;
 		case GameOptions.Level2:
-			Application.LoadLevel("tillintallin");
-			break;
-		case GameOptions.Level3:
-	
-			Application.LoadLevel("juoppo1");
+			sa.vaihdaKentta("tillintallin");
 
 			break;
-		case GameOptions.Level4:
+		case GameOptions.Level3:
+			sa.vaihdaKentta("juoppo1");
 	
-			Application.LoadLevel("kirkkopuisto");
+			break;
+		case GameOptions.Level4:
+			sa.vaihdaKentta("kirkkopuisto");
 
 			break;
 		case GameOptions.Level5:
-			Application.LoadLevel("vakkari");
+			sa.vaihdaKentta("vakkari");
 		
 			break;
 
-	/*		public string kentta(){
-				int randomSound = 0;
-				randomSound = sa.soitaAani();
-				vastaus = sa.Answers[randomSound];
-			}*/
+	
+	case GameOptions.rahaa:
+		//	kentta();
+			string choice = "rahaa";
 
-	case GameOptions.Level7:
-			int randomSound = 0;
-			randomSound = sa.soitaAani();
-			string choice = "tupakkaa";
-			Debug.Log(sa.Answers[randomSound]);
-			if(sa.Answers[randomSound]==choice){
-			Application.LoadLevel("vakkari");
+			Debug.Log(vastaus.CompareTo(choice) == 0);
+			Debug.Log ("choise:" + choice);
+			Debug.Log ("v:" + vastaus);
+
+			//Debug.Log(sa.Answers[randomSound]);
+			//Debug.Log("valinta");
+		
+			if(vastaus.CompareTo(choice) == 0 ){
+			sa.vaihdaKentta("kirkkopuisto");
 			}
 			else
-			Application.LoadLevel("tillintallin");
+			sa.vaihdaKentta("tillintallin");
+			break;
 
-	//		string answer5 = "vakkari";
+		case GameOptions.tupakkaa:
+	//		kentta();
+			string choice2 = "tupakkaa";
+
+			Debug.Log(vastaus.CompareTo(choice2) == 0);
+			Debug.Log ("choise:" + choice2);
+			Debug.Log ("v:" + vastaus);
+
+			//Debug.Log(vastaus);
+			if(vastaus.CompareTo(choice2) == 0 ){
+				sa.vaihdaKentta("kirkkopuisto");
+			}
+			else
+				sa.vaihdaKentta("tillintallin");
+			break;
+
+		case GameOptions.kaljaa:
+		//	kentta();
+			string choice3 = "kaljaa";
+
+			Debug.Log(vastaus.CompareTo(choice3) == 0);
+			Debug.Log ("choise:" + choice3);
+			Debug.Log ("v:" + vastaus);
+
+			if(vastaus.CompareTo(choice3) == 0 ){
+				sa.vaihdaKentta("kirkkopuisto");
+			}
+			else
+				sa.vaihdaKentta("tillintallin");
+			break;
+			//		string answer5 = "vakkari";
 //			if(answer5 == soundAtm){
 //			Application.LoadLevel(answer5);
 	//		}
 	//		else Application.LoadLevel("tillintallin");
-			break;
+	
 
 
+			}
 
 
-		case GameOptions.Level6:
+		//case GameOptions.Level6:
 //			audio.clip = SoundsAndAnswer.olina;
 //			audio.Play();
-			break;
+			//break;
 	/*	case GameOptions.Quit:
 			Application.Quit();
 			break;
 */			
-		}
 
 
     }//OnMouseUp
