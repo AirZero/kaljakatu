@@ -5,7 +5,7 @@ using System.Collections;
 
 public class SoundsAndAnswer : MonoBehaviour {
 	
-
+	public string vastaus = "";
 	public GameObject[] drunkPeopleSounds = new GameObject[3];
 	public string[] Answers = {"rahaa", "tupakkaa", "kaljaa"};//new string[3];
 	private System.Random rnd = new System.Random();
@@ -42,16 +42,16 @@ public class SoundsAndAnswer : MonoBehaviour {
 
 	public void vaihdaKentta(string kentanNimi){
 		Application.LoadLevel(kentanNimi);
-		sa.kentta ();
+		kentta ();
 	}
 
 	public void kentta(){
 		int randomSound = 0;
 		//	sa.soitaAani();
-		randomSound = sa.soitaAani();
+		randomSound = soitaAani();
 		//	Debug.Log("ennen" + vastaus);
 		//	vastaus = sa.Answers[randomSound];
-		vastaus = sa.rightAnswer(randomSound);
+		vastaus = rightAnswer(randomSound);
 		//	Debug.Log("jalkeen " + vastaus);
 		//	Debug.Log(vastaus);
 	}

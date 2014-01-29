@@ -7,7 +7,7 @@ public class GameOptionControl : MonoBehaviour {
 
 	//private SoundsAndAnswer sa;
 	private SoundsAndAnswer sa;
-	public string vastaus = "";
+
 	private System.Random rnd = new System.Random();
 
 
@@ -134,14 +134,14 @@ public class GameOptionControl : MonoBehaviour {
 		//	kentta();
 			string choice = "rahaa";
 
-			Debug.Log(vastaus.CompareTo(choice) == 0);
+//			Debug.Log(vastaus.CompareTo(choice) == 0);
 			Debug.Log ("choise:" + choice);
-			Debug.Log ("v:" + vastaus);
+		//	Debug.Log ("v:" + vastaus);
 
 			//Debug.Log(sa.Answers[randomSound]);
 			//Debug.Log("valinta");
 		
-			if(vastaus.CompareTo(choice) == 0 ){
+			if(sa.vastaus.CompareTo(choice) == 0 ){
 			sa.vaihdaKentta("kirkkopuisto");
 			}
 			else
@@ -152,12 +152,12 @@ public class GameOptionControl : MonoBehaviour {
 	//		kentta();
 			string choice2 = "tupakkaa";
 
-			Debug.Log(vastaus.CompareTo(choice2) == 0);
+			Debug.Log(sa.vastaus.CompareTo(choice2) == 0);
 			Debug.Log ("choise:" + choice2);
-			Debug.Log ("v:" + vastaus);
+			Debug.Log ("v:" + sa.vastaus);
 
 			//Debug.Log(vastaus);
-			if(vastaus.CompareTo(choice2) == 0 ){
+			if(sa.vastaus.CompareTo(choice2) == 0 ){
 				sa.vaihdaKentta("kirkkopuisto");
 			}
 			else
@@ -168,11 +168,11 @@ public class GameOptionControl : MonoBehaviour {
 		//	kentta();
 			string choice3 = "kaljaa";
 
-			Debug.Log(vastaus.CompareTo(choice3) == 0);
+			//Debug.Log(vastaus.CompareTo(choice3) == 0);
 			Debug.Log ("choise:" + choice3);
-			Debug.Log ("v:" + vastaus);
+			//Debug.Log ("v:" + vastaus);
 
-			if(vastaus.CompareTo(choice3) == 0 ){
+			if(sa.vastaus.CompareTo(choice3) == 0 ){
 				sa.vaihdaKentta("kirkkopuisto");
 			}
 			else
